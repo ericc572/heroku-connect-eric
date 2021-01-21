@@ -3,9 +3,10 @@
   <table class="table table-striped table-bordered">
     <tr>
       <th>Case Number</th>
-      <th>Subject</th>
-      <th>Email</th> 
+      <th>Subject Content</th>
+      <th>Contact Email</th> 
       <th>Priority</th>
+      <th>Status</th>
       <th>Created At:</th>
     </tr>
 
@@ -15,6 +16,7 @@
         <td><%= c.subject %></td>
         <td><%= c.contactemail %></td>
         <td><%= c.priority%></td>
+        <td><%= c.status%></td>
         <td><%= c.createddate %></td>
       </tr>
     <% end %>
