@@ -3,7 +3,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
-
+require 'json'
 
 get "/" do
   erb :home
@@ -17,6 +17,11 @@ end
 get "/cases" do
  @cases = Case.all
  erb :index
+end
+
+get "/api/cases" do
+  content_type :json
+  { data: Case.all}.to_json
 end
 
 get "/create" do
