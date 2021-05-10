@@ -34,6 +34,13 @@ get "/api/cases" do
   { data: Case.all}.to_json
 end
 
+post '/api/cases' do
+  @json = JSON.parse(request.body.read)
+  puts @json
+
+  Case.where("id = #{@json[:case_id]}").update(status: @json[:status])
+end
+
 get "/create" do
   dashboard_url = 'https://dashboard.heroku.com/'
   match = /(.*?)\.herokuapp\.com/.match(request.host)
